@@ -125,6 +125,20 @@ export function QuickAddDialog({ defaultDate, defaultHour, trigger, className }:
 
           <div className="space-y-2">
             <Label htmlFor="amount" className="text-lg">Amount (R$)</Label>
+            <div className="flex gap-2 mb-2">
+              {[10, 50, 100].map((val) => (
+                <Button
+                  key={val}
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="flex-1 rounded-lg border-primary/20 hover:border-primary hover:bg-primary/5 transition-colors"
+                  onClick={() => setAmount(val.toString())}
+                >
+                  + R$ {val}
+                </Button>
+              ))}
+            </div>
             <div className="relative">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground font-semibold">R$</span>
               <Input
