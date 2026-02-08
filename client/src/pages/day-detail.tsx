@@ -79,10 +79,10 @@ export default function DayDetail() {
   if (!dayDetails && !isLoading) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4 text-center">
-        <h2 className="text-2xl font-bold mb-2">Day not found</h2>
-        <p className="text-muted-foreground mb-6">Seems like this day doesn't exist yet.</p>
+        <h2 className="text-2xl font-bold mb-2">Dia não encontrado</h2>
+        <p className="text-muted-foreground mb-6">Parece que este dia ainda não tem registros.</p>
         <Link href="/">
-          <Button>Go Back Home</Button>
+          <Button>Voltar para o Início</Button>
         </Link>
       </div>
     );
@@ -117,7 +117,7 @@ export default function DayDetail() {
                 onSelect={() => setShowClearDialog(true)}
               >
                 <Trash2 className="mr-2 h-4 w-4" />
-                Clear Day
+                Limpar Dia
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -136,7 +136,7 @@ export default function DayDetail() {
             <div className="flex gap-4 text-sm text-muted-foreground font-medium">
               <div className="flex items-center gap-1.5">
                 <Clock className="h-4 w-4 text-primary/70" />
-                <span>{activeHours}h active</span>
+                <span>{activeHours}h ativas</span>
               </div>
             </div>
           </div>
@@ -176,20 +176,20 @@ export default function DayDetail() {
       <AlertDialog open={showClearDialog} onOpenChange={setShowClearDialog}>
         <AlertDialogContent className="rounded-2xl">
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogTitle>Você tem certeza?</AlertDialogTitle>
             <AlertDialogDescription>
-              This will permanently delete all revenue entries for <strong>{formattedDate}</strong>. 
-              This action cannot be undone.
+              Isso excluirá permanentemente todos os registros de receita de <strong>{formattedDate}</strong>. 
+              Esta ação não pode ser desfeita.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel className="rounded-xl">Cancel</AlertDialogCancel>
+            <AlertDialogCancel className="rounded-xl">Cancelar</AlertDialogCancel>
             <AlertDialogAction 
               onClick={handleClearDay}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-xl"
               disabled={isClearing}
             >
-              {isClearing ? "Clearing..." : "Yes, Clear All"}
+              {isClearing ? "Limpando..." : "Sim, Limpar Tudo"}
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

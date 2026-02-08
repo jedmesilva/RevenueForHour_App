@@ -32,11 +32,11 @@ export default function Home() {
       <header className="sticky top-0 z-30 bg-background/80 backdrop-blur-lg border-b border-border/50 px-6 py-6 shadow-sm">
         <div className="max-w-2xl mx-auto flex items-start justify-between">
           <div>
-            <h1 className="text-3xl font-display font-bold text-foreground">Revenue</h1>
-            <p className="text-muted-foreground font-medium mt-1">Track your daily income</p>
+            <h1 className="text-3xl font-display font-bold text-foreground">Receita</h1>
+            <p className="text-muted-foreground font-medium mt-1">Acompanhe seu faturamento diário</p>
           </div>
           <div className="text-right">
-            <span className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Total</span>
+            <span className="text-xs text-muted-foreground uppercase font-bold tracking-wider">Total Geral</span>
             <div className="text-2xl font-bold text-primary font-display flex items-center gap-2">
               <TrendingUp className="h-5 w-5" />
               {formatCurrency(grandTotal)}
@@ -65,9 +65,9 @@ export default function Home() {
             <div className="bg-secondary/50 p-6 rounded-full">
               <Wallet className="h-12 w-12 text-muted-foreground" />
             </div>
-            <h3 className="text-xl font-bold text-foreground">No entries yet</h3>
+            <h3 className="text-xl font-bold text-foreground">Nenhum registro ainda</h3>
             <p className="text-muted-foreground max-w-xs mx-auto">
-              Start tracking your revenue by adding your first entry.
+              Comece a acompanhar sua receita adicionando seu primeiro registro.
             </p>
           </motion.div>
         )}

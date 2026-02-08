@@ -43,8 +43,8 @@ export function QuickAddDialog({ defaultDate, defaultHour, trigger, className }:
     
     if (isNaN(floatAmount) || floatAmount <= 0) {
       toast({
-        title: "Invalid amount",
-        description: "Please enter a valid positive number.",
+        title: "Valor inválido",
+        description: "Por favor, insira um número positivo válido.",
         variant: "destructive",
       });
       return;
@@ -61,14 +61,14 @@ export function QuickAddDialog({ defaultDate, defaultHour, trigger, className }:
         setOpen(false);
         setAmount("");
         toast({
-          title: "Entry added",
-          description: `Added R$ ${floatAmount.toFixed(2)} to ${format(new Date(date), "dd/MM")}`,
+          title: "Registro adicionado",
+          description: `Adicionado R$ ${floatAmount.toFixed(2)} em ${format(new Date(date), "dd/MM")}`,
         });
       },
       onError: () => {
         toast({
-          title: "Error",
-          description: "Failed to save entry. Please try again.",
+          title: "Erro",
+          description: "Falha ao salvar o registro. Tente novamente.",
           variant: "destructive",
         });
       }
@@ -92,13 +92,13 @@ export function QuickAddDialog({ defaultDate, defaultHour, trigger, className }:
       </DialogTrigger>
       <DialogContent className="sm:max-w-md rounded-2xl">
         <DialogHeader>
-          <DialogTitle className="text-xl font-display">Add Revenue</DialogTitle>
+          <DialogTitle className="text-xl font-display">Adicionar Receita</DialogTitle>
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-6 pt-4">
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="date">Date</Label>
+              <Label htmlFor="date">Data</Label>
               <Input
                 id="date"
                 type="date"
@@ -109,7 +109,7 @@ export function QuickAddDialog({ defaultDate, defaultHour, trigger, className }:
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="hour">Hour</Label>
+              <Label htmlFor="hour">Hora</Label>
               <Input
                 id="hour"
                 type="number"
@@ -124,7 +124,7 @@ export function QuickAddDialog({ defaultDate, defaultHour, trigger, className }:
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="amount" className="text-lg">Amount (R$)</Label>
+            <Label htmlFor="amount" className="text-lg">Valor (R$)</Label>
             <div className="flex gap-2 mb-2">
               {[10, 50, 100].map((val) => (
                 <Button
@@ -153,7 +153,7 @@ export function QuickAddDialog({ defaultDate, defaultHour, trigger, className }:
                 required
               />
             </div>
-            <p className="text-xs text-muted-foreground">Enter amount in Reais (e.g. 150,50)</p>
+            <p className="text-xs text-muted-foreground">Insira o valor em Reais (ex: 150,50)</p>
           </div>
 
           <Button 
@@ -164,10 +164,10 @@ export function QuickAddDialog({ defaultDate, defaultHour, trigger, className }:
             {isPending ? (
               <>
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                Saving...
+                Salvando...
               </>
             ) : (
-              "Save Entry"
+              "Salvar Registro"
             )}
           </Button>
         </form>
