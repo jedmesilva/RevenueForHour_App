@@ -58,8 +58,10 @@ export function HourRow({ date, hour, amount, maxAmount }: HourRowProps) {
               Let's keep it fixed left padding for readability, but bold if present.
           */}
           <span className={cn(
-            "pl-3 text-sm font-medium transition-colors pointer-events-none tabular-nums",
-            hasMoney ? "text-primary-foreground font-bold mix-blend-multiply dark:mix-blend-normal dark:text-primary-foreground" : "text-muted-foreground/30"
+            "pl-3 text-sm font-bold transition-colors pointer-events-none tabular-nums relative z-20",
+            hasMoney 
+              ? "text-primary dark:text-primary-foreground drop-shadow-[0_0_2px_rgba(255,255,255,0.8)] dark:drop-shadow-[0_0_2px_rgba(0,0,0,0.8)]" 
+              : "text-muted-foreground/30"
           )}>
             {hasMoney ? formatCurrency(amount) : "-"}
           </span>
